@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Family Planner</string>
+    <string name="pref_password_was_set">password_set</string>
+
+    <string-array name="security_questions">
+        <item>What was your childhood nickname?</item>
+        <item>What is the name of your favorite childhood friend?</item>
+        <item>In what city or town did your mother and father meet?</item>
+        <item>What is your favorite movie?</item>
+    </string-array>
+
+    <string name="child_name_placeholder">Add a child</string>
+
+    <string name="undo_delete_child">UNDO</string>
+    <string name="child_deleted">Child deleted</string>
+    <string name="child_delete_dialog_message">Are you sure you want to delete the child and all the information?</string>
+    <string name="child_delete_dialog_title">Delete this child?</string>
+
+    <string name="path_pathmorph_expandcollapse">M 1,-4 L 1,4 L -1,4 L -1,-4 Z</string>
+</resources>

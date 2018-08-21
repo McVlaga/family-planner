@@ -1,0 +1,157 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 6,
+    "identityHash": "8caa4c91e93e9045a53c4cb4eb455238",
+    "entities": [
+      {
+        "tableName": "children",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`child_id` TEXT NOT NULL, `first_name` TEXT, `last_name` TEXT, `disability` TEXT, `bio` TEXT, `birthday_millis` INTEGER NOT NULL, `image_path` TEXT, PRIMARY KEY(`child_id`))",
+        "fields": [
+          {
+            "fieldPath": "childId",
+            "columnName": "child_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "first_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "disability",
+            "columnName": "disability",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bio",
+            "columnName": "bio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "birthdayMillis",
+            "columnName": "birthday_millis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagePath",
+            "columnName": "image_path",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "child_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "stressors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`stressor_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `stressor` TEXT NOT NULL, `child_id` TEXT NOT NULL, FOREIGN KEY(`child_id`) REFERENCES `children`(`child_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "stressorId",
+            "columnName": "stressor_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stressor",
+            "columnName": "stressor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "childId",
+            "columnName": "child_id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "stressor_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "children",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "child_id"
+            ],
+            "referencedColumns": [
+              "child_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "supports",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`support_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `support` TEXT NOT NULL, `child_id` TEXT NOT NULL, FOREIGN KEY(`child_id`) REFERENCES `children`(`child_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "supportId",
+            "columnName": "support_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "support",
+            "columnName": "support",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "childId",
+            "columnName": "child_id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "support_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "children",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "child_id"
+            ],
+            "referencedColumns": [
+              "child_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"8caa4c91e93e9045a53c4cb4eb455238\")"
+    ]
+  }
+}

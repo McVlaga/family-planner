@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.NavigationView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_navigation_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/children_drawer_header"/>
+
+        <LinearLayout
+            android:id="@+id/menu_items_view"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_small">
+
+            <Button
+                android:id="@+id/reflections_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_reflections"
+                android:drawableLeft="@drawable/ic_reflections"
+                android:gravity="start|center_vertical"
+                android:stateListAnimator="@null"
+                android:background="@drawable/pressed_button_background"
+                style="@style/SelectableItemBackground"
+                android:text="Reflections"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:tag="Reflections"/>
+
+            <Button
+                android:id="@+id/child_info_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_child_info"
+                android:drawableLeft="@drawable/ic_child_info"
+                android:gravity="start|center_vertical"
+                android:stateListAnimator="@null"
+                android:background="@drawable/pressed_button_background"
+                style="@style/SelectableItemBackground"
+                android:text="Child Info"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:textAllCaps="false"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:tag="Child Info"/>
+
+            <Button
+                android:id="@+id/resources_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_resources"
+                android:drawableLeft="@drawable/ic_resources"
+                android:gravity="start|center_vertical"
+                android:stateListAnimator="@null"
+                android:background="@drawable/pressed_button_background"
+                style="@style/SelectableItemBackground"
+                android:textAllCaps="false"
+                android:text="Resources"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:tag="Resources"/>
+
+            <Button
+                android:id="@+id/network_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_network"
+                android:drawableLeft="@drawable/ic_network"
+                android:gravity="start|center_vertical"
+                android:stateListAnimator="@null"
+                android:background="@drawable/pressed_button_background"
+                style="@style/SelectableItemBackground"
+                android:textAllCaps="false"
+                android:text="Network"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:tag="Network"/>
+
+            <Button
+                android:id="@+id/nearby_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_nearby"
+                android:drawableLeft="@drawable/ic_nearby"
+                android:gravity="start|center_vertical"
+                android:stateListAnimator="@null"
+                android:background="@drawable/pressed_button_background"
+                style="@style/SelectableItemBackground"
+                android:textAllCaps="false"
+                android:text="Nearby"
+                android:textColor="@color/colorTextDarkPrimary"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:tag="Nearby"/>
+        </LinearLayout>
+
+            <ListView
+                android:id="@+id/children_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0dp"
+                android:divider="@null"
+                android:visibility="gone"/>
+    </LinearLayout>
+
+</android.support.design.widget.NavigationView>

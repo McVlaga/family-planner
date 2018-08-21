@@ -1,0 +1,25 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/children_view"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/add_child_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_add_child"
+        android:drawableLeft="@drawable/ic_add_child"
+        android:gravity="start|center_vertical"
+        android:stateListAnimator="@null"
+        android:background="?attr/selectableItemBackground"
+        android:text="Add a child"
+        android:textAllCaps="false"
+        android:textColor="@color/colorTextDarkPrimary"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:paddingLeft="@dimen/margin_big"
+        android:paddingStart="@dimen/margin_big"
+        android:drawablePadding="24dp"/>
+</LinearLayout>
